@@ -7,16 +7,10 @@ export default function AppRoutes() {
         <Router>
             <Routes>
                 <Route exact path='/login' element={<Login/>} />
-                <Route exact path='/home' element={<Home/>} />
+                <Route path='/*' element={(
+                    <h1 style={{marginTop:300}}> 404 <br/> página no encontrada</h1>
+                )} />
             </Routes>
         </Router>
-    )
-}
-
-function Home() {
-    return (
-        <div>
-            <h2 style={{marginTop:300}}> Home </h2>
-        </div>
     )
 }
