@@ -2,6 +2,9 @@ import React from "react"; //imr atajo para importar react
 import axios from "axios";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import './login.css';
+import app from "../../app.json";
+
+const { APIHOST } = app;
 
 export default class login extends React.Component {
   //ccc atajo para traer estructura del construtor
@@ -13,7 +16,16 @@ export default class login extends React.Component {
     };
   }
   iniciarSesion (){
-    axios.post();
+    axios.post(`${APIHOST}/usuarios/login`, {
+      usuario: this.state.usuario,
+      pass: this.state.pass,
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
   render() {
     return (
