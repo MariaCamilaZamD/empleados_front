@@ -1,4 +1,5 @@
 import React from "react"; //imr atajo para importar react
+import axios from "axios";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import './login.css';
 
@@ -12,7 +13,7 @@ export default class login extends React.Component {
     };
   }
   iniciarSesion (){
-    alert(`usuario: ${this.state.usuario} - password: ${this.state.pass}`)
+    axios.post();
   }
   render() {
     return (
